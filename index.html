@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://use.fontawesome.com/8ac3bd52f8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <title>Jack Board</title>
+    <style type="text/css">
+    * {
+    	margin:0 auto;
+        background: rgba(0,0,200,1);
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        font-family: Arial;
+    }
+    .fa {
+        margin: 50px;
+    }
+    .fa-sun-o {
+        color: orange;
+    }
+    .fa-spoon {
+    	color:green;
+    }
+    .fa-book {
+        color: yellow;
+    }
+    .fa-puzzle-piece {
+        color: red;
+    }
+    .fa-gamepad {
+        color: black;
+    }
+    .fa-cutlery {
+    	color:silver;
+    }
+    .fa-bath {
+        color: aqua;
+    }
+    .fa-moon-o {
+        color: white;
+    }
+    </style>
+</head>
+
+<body>
+    <p>Jack Board</p>
+    <br>
+    <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-spoon fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+    <br>
+    <i class="fa fa-puzzle-piece fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-gamepad fa-5x" aria-hidden="true"></i>
+    <br>
+    <i class="fa fa-cutlery fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-bath fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-moon-o fa-5x" aria-hidden="true"></i>
+    <script type="text/javascript">
+    // var time = moment() gives you current time. no format required.
+    checkTime();
+
+    function checkTime() {
+        var format = 'hh:mm:ss'
+        var time = moment(),
+            morns = moment('06:45:00', format),
+            morne = moment('07:15:59', format),
+            schools = moment('07:16:00', format),
+            schoole = moment('12:14:59', format),
+            plays = moment('12:15:00', format),
+            playe = moment('18:19:59', format),
+            dinners = moment('18:20:00', format),
+            dinnere = moment('18:44:59', format),
+            marios = moment('18:45:00', format),
+            marioe = moment('19:14:59', format),
+            baths = moment('19:15:00', format),
+            bathe = moment('19:19:59', format),
+            nights = moment('19:20:00', format),
+            nighte = moment('06:44:59', format);
+
+        if (time.isBetween(morns, morne)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-sun-o").addClass("fa-spin");
+
+        } else if (time.isBetween(schools, schoole)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-book").addClass("fa-spin");
+
+        } else if (time.isBetween(plays, playe)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-book").addClass("fa-spin");
+
+        } else if (time.isBetween(marios, marioe)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-book").addClass("fa-spin");
+
+        } else if (time.isBetween(baths, bathe)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-bath").addClass("fa-spin");
+
+        } else {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-moon-o").addClass("fa-spin");
+
+        }
+        setTimeout(function() { checkTime() }, 500)
+    }
+    </script>
+</body>
+
+</html>
