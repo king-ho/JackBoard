@@ -46,8 +46,6 @@
 </head>
 
 <body>
-    <p>Jack Board</p>
-    <br>
     <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
     <i class="fa fa-spoon fa-5x" aria-hidden="true"></i>
     <i class="fa fa-book fa-5x" aria-hidden="true"></i>
@@ -66,8 +64,10 @@
         var format = 'hh:mm:ss'
         var time = moment(),
             morns = moment('06:45:00', format),
-            morne = moment('07:15:59', format),
-            schools = moment('07:16:00', format),
+            morne = moment('07:14:59', format),
+            breakfasts = moment('07:15:00', format),
+            breakfaste = moment('07:54:59', format),
+            schools = moment('07:55:00', format),
             schoole = moment('12:14:59', format),
             plays = moment('12:15:00', format),
             playe = moment('18:19:59', format),
@@ -83,6 +83,10 @@
         if (time.isBetween(morns, morne)) {
             $(".fa").removeClass("fa-spin");
             $(".fa-sun-o").addClass("fa-spin");
+
+        } else if (time.isBetween(breakfasts, breakfaste)) {
+            $(".fa").removeClass("fa-spin");
+            $(".fa-book").addClass("fa-spin");
 
         } else if (time.isBetween(schools, schoole)) {
             $(".fa").removeClass("fa-spin");
